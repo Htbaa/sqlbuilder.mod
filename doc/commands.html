@@ -1,0 +1,215 @@
+<html><head><title>htbaa.SqlBuilder reference</title>
+<link rel=stylesheet Type=text/css href='../../../../doc/bmxstyle.css'>
+</head><body>
+<table width=100% cellspacing=0><tr align=center><td class=small>&nbsp;</td>
+<td class=small width=1%><b>htbaapub.sqlbuilder:</b></td>
+<td class=small width=1%><a href=#types class=small>Types</a></td>
+<td class=small width=1%><a href=#modinfo class=small>Modinfo</a></td>
+<td class=small width=1%><a href='../../../../mod/htbaapub.mod/sqlbuilder.mod/sqlbuilder.bmx' class=small>Source</a></td>
+<td class=small>&nbsp;</td></tr></table>
+<h1>htbaa.SqlBuilder</h1>
+<h1>SqlBuilder</h1>
+<p>This module allows you to build SQL queries for use with bah.database. It also requires bah.regex.</p>
+<p>Its interface is lightly based on PHP's <a href="http://framework.zend.com/manual/en/zend.db.select.html">Zend_Db_Select</a>.</p>
+<p>
+<h2>Examples</h2>
+<p>Please take a look at one of the examples below.</p>
+<ul>
+	<li><a href="../examples/example1.bmx">example1.bmx</a></li>
+</ul>
+<h2><a name=types></a>Types Summary</h2><table class=doc width=100%>
+<tr><td class=docleft width=1%><a href=#TSqlBuilder>TSqlBuilder</a></td><td class=docright>
+SqlBuilder type to build SQL queries.
+</td></tr>
+</table>
+<h2
+ id=typesdet>Types
+</h2>
+<table class=doc width=100% cellspacing=3 id=TSqlBuilder>
+<tr><td class=doctop colspan=2>Type TSqlBuilder</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>SqlBuilder type to build SQL queries.</td></tr>
+</table>
+<table class=doc width=90% align=center><tr ><th class=doctop colspan=2 align=left><a name=TSqlBuilder_consts></a>Constants Summary</th></tr><tr><td colspan=2>
+<a href=#TYPE_DELETE>TYPE_DELETE</a>
+, 
+<a href=#TYPE_INSERT>TYPE_INSERT</a>
+, 
+<a href=#TYPE_SELECT>TYPE_SELECT</a>
+, 
+<a href=#TYPE_UPDATE>TYPE_UPDATE</a>
+</td></tr>
+</table>
+<table class=doc width=90% align=center><tr ><th class=doctop colspan=2 align=left><a name=TSqlBuilder_globals></a>Globals Summary</th></tr><tr><td colspan=2>
+<a href=#enable_quoting>enable_quoting</a>
+</td></tr>
+</table>
+<table class=doc width=90% align=center><tr ><th class=doctop colspan=2 align=left><a name=TSqlBuilder_methods></a>Methods Summary</th></tr>
+<tr><td class=docleft width=1%><a href=#BindValues>BindValues</a></td><td class=docright>
+Bind values to TDatabaseQuery.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#From>From</a></td><td class=docright>
+Add FROM clause.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Limit>Limit</a></td><td class=docright>
+Set LIMIT clause.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#New>New</a></td><td class=docright>
+Constructor.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Order>Order</a></td><td class=docright>
+Add ORDER BY clause.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#OrWhere>OrWhere</a></td><td class=docright>
+Add WHERE (OR) part.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Reset>Reset</a></td><td class=docright>
+Reset query clauses and values.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#ResetLimit>ResetLimit</a></td><td class=docright>
+Reset LIMIT clause.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#ResetSet>ResetSet</a></td><td class=docright>
+Reset SET clause and values.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#ResetValues>ResetValues</a></td><td class=docright>
+Reset values.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#ResetWhere>ResetWhere</a></td><td class=docright>
+Reset WHERE clause and values.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Set>Set</a></td><td class=docright>
+Add SET data.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetColumnInfo>SetColumnInfo</a></td><td class=docright>
+Pass a TMap with TDBColumns to this method.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetType>SetType</a></td><td class=docright>
+Set Query type.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#ToString>ToString</a></td><td class=docright>
+Assemble query.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Where>Where</a></td><td class=docright>
+Add WHERE (AND) part.
+</td></tr>
+</table>
+<table class=doc width=90% align=center><tr ><th class=doctop colspan=2 align=left><a name=TSqlBuilder_functions></a>Functions Summary</th></tr>
+<tr><td class=docleft width=1%><a href=#QuotingEnabled>QuotingEnabled</a></td><td class=docright>
+Check if column quoting is enabled.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetQuoting>SetQuoting</a></td><td class=docright>
+Enable or disable column quoting.
+</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=TYPE_DELETE>
+<tr><td class=doctop colspan=2>Const TYPE_DELETE:Int</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Define a DELETE query.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=TYPE_INSERT>
+<tr><td class=doctop colspan=2>Const TYPE_INSERT:Int</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Define a INSERT query.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=TYPE_SELECT>
+<tr><td class=doctop colspan=2>Const TYPE_SELECT:Int</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Define a SELECT query.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=TYPE_UPDATE>
+<tr><td class=doctop colspan=2>Const TYPE_UPDATE:Int</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Define a UPDATE query.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=enable_quoting>
+<tr><td class=doctop colspan=2>Global enable_quoting:Int</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Quote columns and tables, yes or no.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=BindValues>
+<tr><td class=doctop colspan=2>Method BindValues(sth:TDatabaseQuery)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Bind values to TDatabaseQuery.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=From>
+<tr><td class=doctop colspan=2>Method From:TSqlBuilder(table:String, what:String = "*")</td></tr>
+<tr><td class=docleft width=1%>Returns</td><td class=docright>TSqlBuilder object (Self)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Add FROM clause.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Limit>
+<tr><td class=doctop colspan=2>Method Limit:TSqlBuilder(limit:Int, offset:Int)</td></tr>
+<tr><td class=docleft width=1%>Returns</td><td class=docright>TSqlBuilder object (Self)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Set LIMIT clause.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=New>
+<tr><td class=doctop colspan=2>Method New()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Constructor.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Order>
+<tr><td class=doctop colspan=2>Method Order:TSqlBuilder(part:String)</td></tr>
+<tr><td class=docleft width=1%>Returns</td><td class=docright>TSqlBuilder object (Self)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Add ORDER BY clause.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=OrWhere>
+<tr><td class=doctop colspan=2>Method OrWhere:TSqlBuilder(part:String, data:TDBType = Null)</td></tr>
+<tr><td class=docleft width=1%>Returns</td><td class=docright>TSqlBuilder object (Self)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Add WHERE (OR) part.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Reset>
+<tr><td class=doctop colspan=2>Method Reset()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Reset query clauses and values.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Reset SET clause, values, WHERE clause and LIMIT clause.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=ResetLimit>
+<tr><td class=doctop colspan=2>Method ResetLimit()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Reset LIMIT clause.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=ResetSet>
+<tr><td class=doctop colspan=2>Method ResetSet()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Reset SET clause and values.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=ResetValues>
+<tr><td class=doctop colspan=2>Method ResetValues()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Reset values.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=ResetWhere>
+<tr><td class=doctop colspan=2>Method ResetWhere()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Reset WHERE clause and values.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Set>
+<tr><td class=doctop colspan=2>Method Set:TSqlBuilder(part:String, data:TDBType = Null)</td></tr>
+<tr><td class=docleft width=1%>Returns</td><td class=docright>TSqlBuilder object (Self)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Add SET data.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetColumnInfo>
+<tr><td class=doctop colspan=2>Method SetColumnInfo(columnInfo:Tmap)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Pass a TMap with TDBColumns to this method.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetType>
+<tr><td class=doctop colspan=2>Method SetType:TSqlBuilder(sql_type:Int)</td></tr>
+<tr><td class=docleft width=1%>Returns</td><td class=docright>TSqlBuilder object (Self)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Set Query type.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Define query type by passing <b>TYPE_SELECT</b>, <b>TYPE_UPDATE</b>, <b>TYPE_DELETE</b> or <b>TYPE_INSERT</b> to <b>sql_type</b>.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=ToString>
+<tr><td class=doctop colspan=2>Method ToString:String()</td></tr>
+<tr><td class=docleft width=1%>Returns</td><td class=docright>Assembled query.</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Assemble query.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Where>
+<tr><td class=doctop colspan=2>Method Where:TSqlBuilder(part:String, data:TDBType = Null, statement:Int = TQueryPart.stAND)</td></tr>
+<tr><td class=docleft width=1%>Returns</td><td class=docright>TSqlBuilder object (Self)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Add WHERE (AND) part.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=QuotingEnabled>
+<tr><td class=doctop colspan=2>Function QuotingEnabled:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Check if column quoting is enabled.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>This is a global setting.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetQuoting>
+<tr><td class=doctop colspan=2>Function SetQuoting(val:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Enable or disable column quoting.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>This is a global setting that can also be accessed through TSqlBuilder.enable_quoting.</td></tr>
+</table>
+<br>
+<h2 id=modinfo>Module Information</h2>
+<table width=100%>
+<tr><th width=1%>Name</th><td>htbaapub.sqlbuilder</td></tr>
+<tr><th width=1%>Version</th><td>0.99</td></tr>
+<tr><th width=1%>Author</th><td>Christiaan Kras</td></tr>
+<tr><th width=1%>Git repository</th><td><a href='http://github.com/Htbaa/sqlbuilder.mod/'>http://github.com/Htbaa/sqlbuilder.mod/</a></td></tr>
+</body></html>
