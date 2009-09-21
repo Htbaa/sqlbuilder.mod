@@ -1,8 +1,5 @@
 SuperStrict
 
-Rem
-	bbdoc: htbaa.SqlBuilder
-EndRem
 Module htbaapub.sqlbuilder
 ModuleInfo "Name: htbaapub.sqlbuilder"
 ModuleInfo "Version: 0.99"
