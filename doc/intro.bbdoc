@@ -1,0 +1,9 @@
+<h1>SqlBuilder</h1>
+<p>This module allows you to build SQL queries for use with bah.database. It also requires bah.regex.</p>
+<p>Its interface is lightly based on PHP's <a href="http://framework.zend.com/manual/en/zend.db.select.html">Zend_Db_Select</a>.</p>
+
+<h2>Examples</h2>
+<p>Please take a look at one of the examples below.</p>
+<ul>
+	<li><a href="../examples/example1.bmx">example1.bmx</a></li>
+</ul>
